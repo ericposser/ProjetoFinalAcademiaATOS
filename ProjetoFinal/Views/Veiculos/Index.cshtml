@@ -1,0 +1,82 @@
+﻿@model IEnumerable<ProjetoFinal.Models.Veiculo>
+
+
+@{
+    ViewData["Title"] = "Veículo";
+}
+
+<h1 class="display-4">Listagem de veículos</h1>
+
+@if (TempData["MensagemSucesso"] != null)
+{
+    <div class="alert alert-success" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+        @TempData["MensagemSucesso"]
+    </div>
+}
+
+@if (TempData["MensagemErro"] != null)
+{
+    <div class="alert alert-danger" role="alert">
+        <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
+        @TempData["MensagemErro"]
+    </div>
+}
+
+<p>
+    <a class="btn btn-success" asp-action="Create">Cadastrar novo veículo</a>
+</p>
+<table id="tables" class="table table-dark table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.placa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.modelo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.marca)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.cor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.carroceria)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.valor)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.placa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.modelo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.marca)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.cor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.carroceria)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.valor)
+            </td>
+            <td>
+                    <a class="btn btn-light" asp-action="Edit" asp-route-id="@item.id">Editar</a> 
+                    <a class="btn btn-info" asp-action="Details" asp-route-id="@item.id">Detalhes</a> 
+                    <a class="btn btn-danger" asp-action="Delete" asp-route-id="@item.id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

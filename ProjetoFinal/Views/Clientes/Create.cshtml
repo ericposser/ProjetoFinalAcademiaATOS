@@ -1,0 +1,48 @@
+﻿@model ProjetoFinal.Models.Cliente
+
+@{
+    ViewData["Title"] = "Cadastrar";
+}
+
+<h1 class="display-4">Cadastrar</h1>
+
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="cpf" class="control-label"></label>
+                <input id="cpfcnpj" type="number" placeholder="000.000.000-00" asp-for="cpf" class="form-control" />
+                <span asp-validation-for="cpf" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="nome" class="control-label"></label>
+                <input placeholder="Nome completo" asp-for="nome" class="form-control" />
+                <span asp-validation-for="nome" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="telefone" class="control-label"></label>
+                <input type="tel" placeholder="(000) 0000-00000" asp-for="telefone" class="form-control" />
+                <span asp-validation-for="telefone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="dataNasci" class="control-label"></label>
+                <input type="date" asp-for="dataNasci" class="form-control" />
+                <span asp-validation-for="dataNasci" class="text-danger"></span>
+            </div>
+            <br/>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+<br/>
+<div>
+    <a class="btn btn-secondary" asp-action="Index">Voltar página</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
