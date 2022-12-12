@@ -36,6 +36,7 @@ namespace ProjetoFinal.Models
         [Required(ErrorMessage = "Digite uma carroceria valida!")]
         public string carroceria { get; set; }
 
+        [DataType(DataType.Currency)]
         [Column("valor")]
         [Display(Name = "Valor")]
         [Required(ErrorMessage = "Digite um preço valido!")]
