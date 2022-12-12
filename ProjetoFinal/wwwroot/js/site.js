@@ -36,3 +36,11 @@ $(document).ready(function () {
 $('.close-alert').click(function () {
     $('.alert').hide('hide');
 });
+
+$("#mcpf").keypress(function () {
+    $(this).mask('000.000.000-00');
+});
+
+$("#mtelefone").keypress(function () {
+    $(this).mask('(00) 0000-00009')
+});   
