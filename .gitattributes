@@ -1,7 +1,10 @@
 ###############################################################################
 # Set default behavior to automatically normalize line endings.
 ###############################################################################
-* text=auto
+$ cat .gitattributes
+*.js linguist-language=cs
+*.css linguist-language=cs
+*.htmo linguist-language=cs
 
 ###############################################################################
 # Set default behavior for command prompt diff.
