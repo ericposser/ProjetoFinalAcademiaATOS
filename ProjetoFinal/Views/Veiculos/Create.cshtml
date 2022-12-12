@@ -34,7 +34,13 @@
             </div>
             <div class="form-group">
                 <label asp-for="carroceria" class="control-label"></label>
-                <input placeholder="Sedan, Hatch..." asp-for="carroceria" class="form-control" />
+                <select placeholder="Sedan, Hatch..." asp-for="carroceria" class="form-control form-select">
+                    <option value="SEDÃ" selected>SEDÃ</option>
+                    <option value="HATCH">HATCH</option>
+                    <option value="COUPÉ">COUPÉ</option>
+                    <option value="CONVERSÍVEL">CONVERSÍVEL</option>
+                    <option value="SUV">SUV</option>
+                </select>
                 <span asp-validation-for="carroceria" class="text-danger"></span>
             </div>
             <div class="form-group">
