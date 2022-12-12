@@ -62,7 +62,7 @@ namespace ProjetoFinal.Controllers
                 {
                     _context.Add(cliente);
                     await _context.SaveChangesAsync();
-                    TempData["MensagemSucesso"] = "Contato cadastrado com sucesso";
+                    TempData["MensagemSucesso"] = "Cliente cadastrado com sucesso";
                     return RedirectToAction(nameof(Index));
                 }
                 return View(cliente);
@@ -109,7 +109,7 @@ namespace ProjetoFinal.Controllers
                 {
                     _context.Update(cliente);
                     await _context.SaveChangesAsync();
-                    TempData["MensagemSucesso"] = "Contato alterado com sucesso";
+                    TempData["MensagemSucesso"] = "Cliente alterado com sucesso";
                 }
                 catch (System.Exception erro)
                 {
@@ -163,7 +163,7 @@ namespace ProjetoFinal.Controllers
             }
             
             await _context.SaveChangesAsync();
-            TempData["MensagemSucesso"] = "Contato removido com sucesso";
+            TempData["MensagemSucesso"] = "Cliente removido com sucesso";
             return RedirectToAction(nameof(Index));
         }
 
