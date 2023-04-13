@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<Contexto>
-    (options => options.UseSqlServer("Data Source=localhost;Initial Catalog=db_loja_veiculos;Integrated Security=False;User ID=sa;Password=99278605eeE;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False"));
+    (options => options.UseSqlServer("Data Source=localhost;Initial Catalog=db_loja_veiculos;Integrated Security=False;User ID=sa;Password=;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False"));
 
 var app = builder.Build();
 
